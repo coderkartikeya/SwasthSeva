@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Floating Label Styles */
+.relative input:focus + label,
+.relative input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.85);
+  background-color: white;
+  padding: 0 0.25rem;
+  color: #3b82f6;
+  transition: all 0.2s ease-out;
+}
+
+.dark .relative input:focus + label,
+.dark .relative input:not(:placeholder-shown) + label {
+  background-color: #1f2937;
+  color: #60a5fa;
+}
+
+/* Input field styles */
+.relative input {
+  transition: all 0.2s ease-out;
+}
+
+.relative input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.dark .relative input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.1);
+}
+
+/* Label base styles */
+.relative label {
+  transition: all 0.2s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+  color: #6b7280;
+}
+
+.dark .relative label {
+  color: #9ca3af;
+}
+
